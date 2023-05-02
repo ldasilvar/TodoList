@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const _ = require ('lodash');
 
+const PORT = process.env.PORT || 3000;
+
 
  
 main().catch(err => console.log(err));
@@ -101,7 +103,7 @@ app.post("/", (req, res) => {
 
   let itemName = req.body.newItem
 
-  let listName = req.body.list.trim()  // Remove leading/trailing spaces
+  let listName = req.body.list.trim()
 
 
 
@@ -190,8 +192,8 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
 });
 
 
