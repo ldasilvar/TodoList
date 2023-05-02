@@ -28,7 +28,7 @@ const itemsSchema = new mongoose.Schema({
 const Item = mongoose.model("Item", itemsSchema);
 
 const cook = new Item({
-  name: "Welcome to your To-do List Baby Mandy",
+  name: "To delete an item of a list, tick the checkbox :)" ,
   
 });
  
@@ -38,7 +38,7 @@ const clean = new Item({
 });
 
 const cat = new Item({
-  name: "To delete an item of a list, tick the checkbox :)"
+  name: "Welcome to your To-do List Baby Mandy"
 })
 
 const defaultItems = [cook, clean, cat];
