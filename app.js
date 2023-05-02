@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/todolistDB');
+  await mongoose.connect('mongodb+srv://ldasilvar:zb2hggpwIxdubRRL@todo.w7chcan.mongodb.net/todolistDB');
 }
 
 const itemsSchema = new mongoose.Schema({
@@ -26,17 +26,17 @@ const itemsSchema = new mongoose.Schema({
 const Item = mongoose.model("Item", itemsSchema);
 
 const cook = new Item({
-  name: "Cook food for Baby",
+  name: "Welcome to your To-do List Baby Mandy",
   
 });
  
 const clean = new Item({
-  name: "Clean the house for Baby",
+  name: "To add a new item to your list, type it underneath and click the + sign",
   
 });
 
 const cat = new Item({
-  name: "Feed Minks"
+  name: "To delete an item of a list, tick the checkbox :)"
 })
 
 const defaultItems = [cook, clean, cat];
@@ -193,3 +193,7 @@ app.get("/about", function(req, res){
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
+
+
+// ldasilvar
+// zb2hggpwIxdubRRL
